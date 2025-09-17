@@ -22,6 +22,7 @@ import com.mtd.Ecomapp.service.ProductService;
 
 public class ProductController {
 	
+
 	@Autowired
      private ProductService productService;
 	
@@ -39,7 +40,7 @@ public class ProductController {
 	public List<Product> findAll(){
 		return productService.getProducts();
 	}
-	@PutMapping("/id")
+	@PutMapping("/{id}")
 	public Product updateProduct(@RequestBody Product product,@PathVariable String id) {
 		return productService.updateProduct(product,id);
 	}
